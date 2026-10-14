@@ -1,0 +1,604 @@
+
+<style>
+  .tt4m-wrapper {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 1150px;
+    margin: 20px auto;
+    padding: 22px;
+    background: linear-gradient(135deg, #fff1f2, #eff6ff, #f0fdf4);
+    color: #253047;
+    line-height: 1.8;
+    border-radius: 22px;
+    box-sizing: border-box;
+  }
+
+  .tt4m-wrapper * {
+    box-sizing: border-box;
+  }
+
+  /* Colorful main heading */
+  .tt4m-hero {
+    padding: 42px 26px;
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(135deg, #6d28d9, #2563eb, #0891b2, #059669);
+    border-radius: 20px;
+    margin-bottom: 28px;
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
+  }
+
+  .tt4m-hero h1 {
+    color: #ffffff;
+    font-size: 36px;
+    line-height: 1.3;
+    margin: 0 0 18px;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .tt4m-wrapper h2 {
+    color: #6d28d9;
+    font-size: 25px;
+    line-height: 1.4;
+    margin-top: 0;
+  }
+
+  /* Bright content sections */
+  .tt4m-intro,
+  .tt4m-section {
+    background: linear-gradient(135deg, #ffffff, #eff6ff);
+    padding: 27px;
+    margin-bottom: 26px;
+    border-radius: 17px;
+    border-left: 7px solid #7c3aed;
+    box-shadow: 0 7px 20px rgba(79, 70, 229, 0.12);
+  }
+
+  .tt4m-section:nth-of-type(even) {
+    border-left-color: #ec4899;
+  }
+
+  /* Two colorful columns */
+  .tt4m-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-bottom: 26px;
+  }
+
+  .tt4m-card {
+    background: linear-gradient(145deg, #dbeafe, #ffffff, #e0f2fe);
+    padding: 27px;
+    border-radius: 18px;
+    border-top: 7px solid #2563eb;
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.14);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .tt4m-card:nth-child(2) {
+    background: linear-gradient(145deg, #f3e8ff, #ffffff, #fce7f3);
+    border-top-color: #c026d3;
+    box-shadow: 0 8px 22px rgba(192, 38, 211, 0.13);
+  }
+
+  .tt4m-card h2 {
+    color: #1d4ed8;
+  }
+
+  .tt4m-card:nth-child(2) h2 {
+    color: #a21caf;
+  }
+
+  .tt4m-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(79, 70, 229, 0.2);
+  }
+
+  /* Colorful service highlight */
+  .tt4m-highlight {
+    padding: 29px;
+    background: linear-gradient(135deg, #fef3c7, #fce7f3, #ede9fe);
+    border: 2px solid #f9a8d4;
+    border-radius: 19px;
+    margin: 27px 0;
+    box-shadow: 0 7px 20px rgba(236, 72, 153, 0.12);
+  }
+
+  .tt4m-highlight h2 {
+    color: #be185d;
+  }
+
+  /* Embedded Blogger page */
+  .tt4m-embed {
+    background: linear-gradient(135deg, #dbeafe, #f3e8ff);
+    padding: 13px;
+    margin: 24px 0;
+    border: 2px solid #a78bfa;
+    border-radius: 17px;
+    box-shadow: 0 7px 20px rgba(124, 58, 237, 0.15);
+  }
+
+  .tt4m-embed iframe {
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: 0;
+    border-radius: 11px;
+    background: #ffffff;
+  }
+
+  /* Gradient call-to-action buttons */
+  .tt4m-button {
+    display: inline-block;
+    margin: 9px 5px 8px 0;
+    padding: 12px 21px;
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 5px 12px rgba(79, 70, 229, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow-wrap: anywhere;
+  }
+
+  .tt4m-button:hover {
+    background: linear-gradient(135deg, #db2777, #ea580c);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(219, 39, 119, 0.25);
+  }
+
+  /* Colorful related-search buttons */
+  .tt4m-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .tt4m-services a {
+    display: inline-block;
+    padding: 11px 17px;
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2563eb, #0891b2);
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.18);
+    transition: transform 0.2s ease;
+  }
+
+  .tt4m-services a:nth-child(5n + 2) {
+    background: linear-gradient(135deg, #7c3aed, #c026d3);
+  }
+
+  .tt4m-services a:nth-child(5n + 3) {
+    background: linear-gradient(135deg, #db2777, #f97316);
+  }
+
+  .tt4m-services a:nth-child(5n + 4) {
+    background: linear-gradient(135deg, #059669, #0d9488);
+  }
+
+  .tt4m-services a:nth-child(5n) {
+    background: linear-gradient(135deg, #d97706, #eab308);
+  }
+
+  .tt4m-services a:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+
+  /* Map section */
+  .tt4m-map {
+    padding: 27px;
+    margin-top: 27px;
+    background: linear-gradient(135deg, #ccfbf1, #dbeafe, #f3e8ff);
+    border: 2px solid #5eead4;
+    border-radius: 19px;
+  }
+
+  .tt4m-map h2 {
+    color: #0f766e;
+  }
+
+  .tt4m-map iframe {
+    display: block;
+    width: 100%;
+    height: 400px;
+    border: 3px solid #ffffff;
+    border-radius: 14px;
+    margin-top: 20px;
+    box-shadow: 0 6px 16px rgba(15, 118, 110, 0.15);
+  }
+
+  /* Bright contact footer */
+  .tt4m-nap {
+    padding: 32px;
+    margin-top: 28px;
+    background: linear-gradient(135deg, #172554, #581c87, #9d174d);
+    color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 24px rgba(88, 28, 135, 0.22);
+  }
+
+  .tt4m-nap h2 {
+    color: #fde68a;
+  }
+
+  .tt4m-nap a {
+    color: #a7f3d0;
+    overflow-wrap: anywhere;
+  }
+
+  .tt4m-nap p {
+    margin: 11px 0;
+  }
+
+  .tt4m-nap strong {
+    color: #fbcfe8;
+  }
+
+  .tt4m-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+    margin-top: 20px;
+  }
+
+  .tt4m-social a {
+    padding: 10px 16px;
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #2563eb, #0891b2);
+    text-decoration: none;
+    border-radius: 9px;
+    font-weight: bold;
+  }
+
+  .tt4m-social a:nth-child(2) {
+    background: linear-gradient(135deg, #db2777, #9333ea);
+  }
+
+  .tt4m-social a:nth-child(3) {
+    background: linear-gradient(135deg, #ea580c, #db2777);
+  }
+
+  .tt4m-social a:nth-child(4) {
+    background: linear-gradient(135deg, #0284c7, #1d4ed8);
+  }
+
+  @media (max-width: 700px) {
+    .tt4m-wrapper {
+      padding: 12px;
+    }
+
+    .tt4m-columns {
+      grid-template-columns: 1fr;
+    }
+
+    .tt4m-hero h1 {
+      font-size: 28px;
+    }
+
+    .tt4m-wrapper h2 {
+      font-size: 22px;
+    }
+
+    .tt4m-embed iframe {
+      height: 600px;
+    }
+
+    .tt4m-map iframe {
+      height: 350px;
+    }
+  }
+</style>
+```
+
+<div class="tt4m-wrapper">
+
+  <!-- MAIN HEADING AND 100-WORD INTRODUCTION -->
+  <header class="tt4m-hero">
+    <h1>Total Trans4Mation Heating &amp; Air Conditioning in Murfreesboro, TN</h1>
+
+    <p>
+      Total Trans4Mation Heating &amp; Air Conditioning provides residential
+      heating, air conditioning, electrical, plumbing, indoor air quality,
+      and water filtration services to customers in Murfreesboro, Tennessee.
+      Our goal is to help homeowners maintain comfortable, functional, and
+      efficient living environments throughout the year. Whether you need
+      help with an air conditioning problem, heating equipment, plumbing
+      concerns, or improving the quality of your indoor air, our team can
+      help you explore suitable service options. We value professional
+      service, clear communication, and dependable solutions tailored to
+      residential needs. Contact our team to discuss your project, arrange
+      service, and learn more about available solutions.
+    </p>
+
+    <a class="tt4m-button"
+       href="https://totaltrans4mation.com"
+       target="_blank"
+       rel="noopener noreferrer">
+      Visit Our Website
+    </a>
+  </header>
+
+  <!-- TWO SIDE-BY-SIDE 100-WORD SECTIONS -->
+  <div class="tt4m-columns">
+
+    <section class="tt4m-card">
+      <h2>AC Repair and Air Conditioning Repair Services</h2>
+
+      <p>
+        Reliable air conditioning is important for maintaining a comfortable
+        home during the warm Tennessee summer. Total Trans4Mation Heating
+        &amp; Air Conditioning helps residential customers address air
+        conditioning concerns and explore appropriate repair solutions.
+        Unusual noises, weak airflow, inconsistent cooling, or equipment
+        that will not start may indicate a problem that needs professional
+        attention. Arranging service when issues appear can help identify
+        potential causes before discomfort continues. Our team understands
+        that every home has different cooling requirements and equipment.
+        We focus on helping customers understand their options and maintain
+        dependable indoor comfort. Contact us to discuss your AC repair
+        needs in Murfreesboro, TN, and surrounding communities.
+      </p>
+
+      <a class="tt4m-button"
+         href="https://totaltrans4mation.com"
+         target="_blank"
+         rel="noopener noreferrer">
+        Explore AC Repair
+      </a>
+    </section>
+
+    <section class="tt4m-card">
+      <h2>AC Installers and Professional HVAC Contractors</h2>
+
+      <p>
+        Selecting the right air conditioning equipment can make a meaningful
+        difference to residential comfort and energy use. Total Trans4Mation
+        Heating &amp; Air Conditioning assists homeowners exploring air
+        conditioning installation and HVAC services in Murfreesboro, TN.
+        Equipment selection should consider the home's size, existing
+        system, insulation, cooling requirements, and household preferences.
+        Professional guidance can help homeowners compare available options
+        and understand what their installation project involves. Whether
+        you are replacing aging equipment or planning an upgrade, it is
+        helpful to discuss your needs before making a decision. Our team
+        provides residential service options designed around customer
+        requirements. Contact us to learn more about air conditioning
+        installation and HVAC solutions for your home.
+      </p>
+
+      <a class="tt4m-button"
+         href="https://totaltrans4mation.com"
+         target="_blank"
+         rel="noopener noreferrer">
+        Explore HVAC Services
+      </a>
+    </section>
+
+  </div>
+
+  <!-- THIRD HEADING AND 100-WORD PARAGRAPH -->
+  <section class="tt4m-section">
+    <h2>HVAC Tune-Up and Heating Repair for Year-Round Comfort</h2>
+
+    <p>
+      Seasonal maintenance can help homeowners identify developing equipment
+      concerns and prepare heating and cooling systems for changing weather.
+      Total Trans4Mation Heating &amp; Air Conditioning provides HVAC-related
+      services for residential customers in Murfreesboro, TN. An HVAC tune-up
+      may include checking accessible system components, reviewing operation,
+      and identifying concerns that require further attention. When a heating
+      system struggles to maintain a comfortable temperature, professional
+      assessment can help determine the next steps. Preparing equipment before
+      periods of heavy use may also help homeowners plan maintenance more
+      conveniently. Every system has different needs, so service recommendations
+      depend on its condition and specifications. Contact our team to discuss
+      heating repair, routine maintenance, and available HVAC service options.
+    </p>
+  </section>
+
+  <!-- RELATED SERVICE LINKS -->
+  <section class="tt4m-highlight">
+    <h2>Explore Our Heating, Cooling, and Home Comfort Services</h2>
+
+    <p>
+      Discover more about the residential services offered by Total
+      Trans4Mation Heating &amp; Air Conditioning. Use the links below to
+      explore our website, social profiles, and business listing.
+    </p>
+
+    <div class="tt4m-services">
+      <a href="https://totaltrans4mation.com"
+         target="_blank" rel="noopener noreferrer">AC Repair</a>
+
+      <a href="https://twitter.com/TotalT4M"
+         target="_blank" rel="noopener noreferrer">AC Installers</a>
+
+      <a href="https://www.facebook.com/259484904070235"
+         target="_blank" rel="noopener noreferrer">Air Conditioning Repair</a>
+
+      <a href="https://www.instagram.com/totaltrans4mationinc/"
+         target="_blank" rel="noopener noreferrer">HVAC Contractors</a>
+
+      <a href="https://www.instagram.com/totaltrans4mationinc/"
+         target="_blank" rel="noopener noreferrer">HVAC Tune-up</a>
+
+      <a href="https://www.linkedin.com/in/ryan-kennedy-87256536/"
+         target="_blank" rel="noopener noreferrer">Heating Repair</a>
+
+      <a href="https://maps.app.goo.gl/EsMtbBWxhjtLEJdB8"
+         target="_blank" rel="noopener noreferrer">Heating Installers</a>
+
+      <a href="https://totaltrans4mation.com"
+         target="_blank" rel="noopener noreferrer">Plumbing</a>
+
+      <a href="https://twitter.com/TotalT4M"
+         target="_blank" rel="noopener noreferrer">Indoor Air Quality</a>
+
+      <a href="https://totaltrans4mation.com"
+         target="_blank" rel="noopener noreferrer">Water Filtration</a>
+    </div>
+  </section>
+
+  <!-- REQUESTED BLOGGER IFRAME -->
+  <section class="tt4m-section">
+    <h2>Discover More About Our Services</h2>
+
+    <p>
+      Learn more about home comfort and the services available from Total
+      Trans4Mation Heating &amp; Air Conditioning. Our team serves residential
+      customers seeking assistance with heating, cooling, electrical,
+      plumbing, indoor air quality, and water filtration. Understanding your
+      home's needs is a useful first step toward choosing appropriate service
+      options. Browse the embedded page below for additional information.
+      If the page does not load within your website, use the direct link
+      to open it in a separate browser tab.
+    </p>
+
+    <div class="tt4m-embed">
+      <iframe
+        src="https://conditioning44.blogspot.com/p/home.html
+"
+        width="100%"
+        height="600"
+        frameborder="0"
+        title="Embedded Homepage"
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <a class="tt4m-button"
+       href="https://conditioning44.blogspot.com/p/home.html
+"
+       target="_blank"
+       rel="noopener noreferrer">
+      Open Embedded Page
+    </a>
+  </section>
+
+  <!-- FOURTH HEADING AND 100-WORD PARAGRAPH -->
+  <section class="tt4m-section">
+    <h2>Plumbing, Indoor Air Quality, and Water Filtration</h2>
+
+    <p>
+      A comfortable home depends on more than heating and cooling alone.
+      Plumbing systems, indoor air quality, and water filtration can also
+      play important roles in everyday household needs. Total Trans4Mation
+      Heating &amp; Air Conditioning provides residential services in these
+      areas to customers in Murfreesboro, Tennessee. Whether you are exploring
+      plumbing assistance, looking for ways to improve indoor air, or
+      considering water filtration, discussing your specific concerns can
+      help identify suitable options. Every home has different equipment,
+      usage patterns, and priorities, so recommendations should reflect
+      the situation at the property. Our team brings multiple home service
+      categories together for customer convenience. Contact us to learn
+      more about available services and plan your next project.
+    </p>
+  </section>
+
+  <!-- GOOGLE MAP EMBED -->
+  <section class="tt4m-map">
+    <h2>Find Total Trans4Mation Heating &amp; Air Conditioning</h2>
+
+    <p>
+      Visit Total Trans4Mation Heating &amp; Air Conditioning at 320 W Main
+      St Suite #200, Murfreesboro, TN 37130. Use the map below to view the
+      business location and plan your route. You can also open the supplied
+      Google Business Profile link for additional location information.
+    </p>
+
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3840.4877169306155!2d-86.394902!3d35.846676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886409bcac198883%3A0x6858a5d9e5ca8a0b!2sTotal%20Trans4mation%20Heating%20%26%20Air%20Conditioning!5e1!3m2!1sen!2s!4v1791969838502!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+    <a class="tt4m-button"
+       href="https://maps.app.goo.gl/EsMtbBWxhjtLEJdB8"
+       target="_blank"
+       rel="noopener noreferrer">
+      Open Google Business Profile
+    </a>
+  </section>
+
+  <!-- COMPLETE NAP DETAILS -->
+  <footer class="tt4m-nap">
+    <h2>Contact Total Trans4Mation Heating &amp; Air Conditioning</h2>
+
+    <p>
+      <strong>Business Name:</strong>
+      Total Trans4Mation Heating &amp; Air Conditioning
+    </p>
+
+    <p>
+      <strong>Address:</strong>
+      320 W Main St Suite #200, Murfreesboro, TN 37130
+    </p>
+
+    <p>
+      <strong>Phone:</strong>
+      <a href="tel:+16159006873">(615) 900-6873</a>
+    </p>
+
+    <p>
+      <strong>Website:</strong>
+      <a href="https://totaltrans4mation.com"
+         target="_blank" rel="noopener noreferrer">
+        https://totaltrans4mation.com
+      </a>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:info@totaltrans4mation.com">
+        info@totaltrans4mation.com
+      </a>
+    </p>
+
+    <p>
+      <strong>Business Hours:</strong>
+      Monday–Friday, 8:00 AM–5:30 PM
+    </p>
+
+    <p><strong>Number of Employees:</strong> 10</p>
+
+    <p><strong>Year Founded:</strong> June 2011</p>
+
+    <p>
+      <strong>About Us:</strong>
+      Total Trans4Mation Heating &amp; Air Conditioning provides residential
+      heating, air conditioning, electrical, plumbing, indoor air quality,
+      and water filtration to customers in Murfreesboro, TN.
+    </p>
+
+    <p>
+      <strong>Google Business Profile:</strong>
+      <a href="https://maps.app.goo.gl/EsMtbBWxhjtLEJdB8"
+         target="_blank" rel="noopener noreferrer">
+        View Google Business Profile
+      </a>
+    </p>
+
+    <h2>Connect With Us</h2>
+
+    <div class="tt4m-social">
+      <a href="https://twitter.com/TotalT4M"
+         target="_blank" rel="noopener noreferrer">Twitter</a>
+
+      <a href="https://www.facebook.com/259484904070235"
+         target="_blank" rel="noopener noreferrer">Facebook</a>
+
+      <a href="https://www.instagram.com/totaltrans4mationinc/"
+         target="_blank" rel="noopener noreferrer">Instagram</a>
+
+      <a href="https://www.linkedin.com/in/ryan-kennedy-87256536/"
+         target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+
+    <a class="tt4m-button"
+       href="https://totaltrans4mation.com"
+       target="_blank" rel="noopener noreferrer">
+      Visit Our Website
+    </a>
+  </footer>
+
+</div>
+```
